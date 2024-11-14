@@ -1,0 +1,714 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    scroll-behavior: smooth;
+    font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+:root{
+    --bg-color: #ffffff;
+    --text-color: #041126;
+    --main-color: #3604b6;
+    --second-color: #94a3b8;
+    --other-color: #ffffffb3;
+    --border-color: #e5e7eb;
+
+    --h1-font: 4.7rem;
+    --h2-font: 3.2rem;
+    --p-font: 1.1rem;
+}
+
+body{
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+
+header{
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
+    height: 12%;
+    top: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: transparent;
+    padding: 30px 15%;
+    transition: all .7s ease;
+}
+
+.logo img{
+    width: 100%;
+    height: auto;
+}
+
+.navlist a{
+    display: inline-block;
+    font-size: var(--p-font);
+    font-weight: 500;
+    color: var(--other-color);
+    margin: 0 25px;
+    transition: all .7s ease;
+}
+
+.navlist a:hover{
+    color: var(--bg-color);
+}
+
+#menu-icon{
+    font-size: 40px;
+    z-index: 1001;
+    color: var(--bg-color);
+    cursor: pointer;
+    display: none;
+}
+
+section{
+    padding: 90px 15% 80px;
+}
+
+.home{
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background-image: url(img/LabuhanBajo.jpg);
+    background-size: cover;
+    background-position: center;
+    animation: slide 25s infinite;
+}
+
+@keyframes slide{
+    5% {
+        background-image: url(img/LabuhanBajo.jpg);
+    }
+    25% {
+        background-image: url(img/rajaampat.jpg);
+    }
+    50% {
+        background-image: url(img/bromo.jpg);
+    }
+    50% {
+        background-image: url(img/bromo.jpg);
+    }
+    75% {
+        background-image: url(img/LabuhanBajo.jpg);
+    }
+    100% {
+        background-image: url(img/rajaampat.jpg);
+    }
+}
+
+.home-text h1{
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--bg-color);
+}
+
+.home-text h3 {
+    font-family: "Fashand", cursive;
+    font-size: 25px;
+    font-weight: 600;
+    color: var(--bg-color);
+}
+
+.btn{
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: var(--p-font);
+    font-weight: 500;
+    color: var(--bg-color);
+    background: var(--main-color);
+    border-radius: 30px;
+    margin-right: 20px;
+    transition: all .7s ease;
+}
+
+.btn:hover{
+    background: #5e3ab8;
+}
+
+
+.btn2{
+    display: inline-block;
+    padding: 14px 30px;
+    background: transparent;
+    border: 2px solid var(--main-color);
+    color: var(--bg-color);
+    font-size: var(--p-font);
+    font-weight: 500;
+    border-radius: 30px;
+    transition: all .7s ease;
+}
+
+.btn2:hover{
+    background: var(--main-color);
+    border: 2px solid var(--main-color);
+}
+
+
+.home-text p {
+    font-size: var(--p-font);
+    font-weight: 500;
+    color: var(--other-color);
+    line-height: 32px;
+    margin-bottom: 35px;
+}
+
+header.sticky{
+    background: var(--text-color);
+    padding: 20px 15%;
+    box-shadow: 0px 4px 15px rgb(0 0 0 / 8%);
+}
+
+
+.middle-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.mid-left h2 {
+    font-size: var(--h2-font);
+    font-weight: 700;
+    margin: 0; /* Tambahkan jika perlu */
+}
+
+.mid-left h6 {
+    font-family: "Fashand", cursive;
+    font-size: 25px;
+    font-weight: 600;
+    color: var(--main-color);
+    margin: 0; /* Tambahkan jika perlu */
+}
+
+.mid-right i {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+    width: 60px;
+    color: var(--text-color);
+    background: transparent;
+    border: 1px solid var(--main-color);
+    border-radius: 50%;
+    font-size: 20px;
+    transition: all 0.7s ease;
+}
+
+.mid-right i:hover {
+    background: var(--main-color);
+    color: var(--bg-color);
+    border: 1px solid var(--main-color);
+}
+
+.content{
+    background: linear-gradient(to top, #f8fbff, #76b9e9);
+}
+.destinasi-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Perbaikan minmax */
+    gap: 2rem;
+    margin-top: 4rem;
+}
+
+.row {
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden; 
+}
+
+.row-img {
+    transition: all 0.5s;
+}
+
+.row-img img {
+    width: 100%; 
+    height: auto;
+    border-radius: 15px;
+}
+
+.star {
+    position: absolute;
+    top: 5%;
+    right: 8%;
+    display: flex;
+    align-items: center;
+    padding: 8px 15px;
+    background: var(--bg-color);
+    font-size: 15px;
+    border-radius: 15px; 
+    color: white;
+}
+
+.star i {
+    color: #fe712a;
+    font-size: 21px;
+    margin-right: 5px; 
+}
+
+.star a {
+    font-size: var(--p-font);
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.row:hover {
+    transform: scale(1.05) translateY(-5px); 
+    cursor: pointer;
+}
+
+.heading{
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.heading span{
+    font-size: 2rem;
+    background: #94a3b8;
+    color: #3604b6;
+    border-radius: 5px;
+    padding: .2rem 1rem;
+    font-family: "Plus Jakarta Sans", sans-serif;
+}
+.package{
+    background: #b5d5ec;
+}
+.mid-center {
+    text-align: center;
+}
+
+.mid-center h2{
+    font-family: var(--h2-font);
+    font-weight: 700;
+}
+
+.box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+    gap: 2rem;
+    margin-top: 4rem;
+    border-radius: 0.9rem;
+}
+
+.box {
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.9rem;
+}
+
+
+.package .box-container .box .content-p h3{
+    font-size: 1.5rem;
+    color: #333;
+}
+.package .box-container .box .content-p h3 i{
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.package .box-container .box .content-p p{
+    font-size: 1rem;
+    color: #666;
+    padding: 1rem 0;
+}
+
+.package .box-container .box .content-p .stars i{
+    font-size: 1rem;
+    color: orange;
+}
+
+.package .box-container .box .content-p .lokasi{
+    font-size: 1.5rem;
+    color: #333;
+    padding-top: 1rem;
+}
+
+
+.btnn{
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: var(--p-font);
+    font-weight: 500;
+    color: var(--bg-color);
+    background: var(--main-color);
+    border-radius: 15px;
+    margin-right: 20px;
+    transition: all .7s ease;
+}
+
+.btnn:hover{
+    background: #5e3ab8;
+}
+
+.booking {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    background: linear-gradient(to right, #f8fbff, #76b9e9);
+}
+
+.booking .row-booking {
+    display: flex;
+    gap: 15rem; /* Jarak antara gambar dan form */
+    align-items: center;
+    justify-content: center;
+    max-width: 800px;
+}
+
+.booking .row-booking .image {
+    flex: 1 1 45%;
+    max-width: 350px;
+}
+
+.booking .row-booking .image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.booking .row-booking form {
+    flex: 1 1 45%;
+    max-width: 350px;
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.booking .row-booking form .inputBox {
+    margin-bottom: 1.5rem;
+}
+
+.booking .row-booking form .inputBox h3 {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 0.5rem;
+}
+
+.booking .row-booking form .inputBox input {
+    width: 100%;
+    padding: 0.8rem;
+    font-size: 1rem;
+    color: #333;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.booking .row-booking form .inputBox input::placeholder {
+    color: #aaa;
+}
+
+.booking .row-booking form .btn {
+    width: 100%;
+    padding: 0.8rem;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #ffa500; /* Warna tombol */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.booking .row-booking form .btn:hover {
+    background-color: blue; /* Warna tombol saat hover */
+}
+
+
+
+.contact{
+    margin: 0px;
+    padding: 0;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    align-items: center;
+    background: linear-gradient(to right, #82b9e0, #f8fbff);
+    font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+.contact-in{
+    width: 80%;
+    height: auto;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+    border-radius: 10px;
+    background: linear-gradient(to right, #f8fbff, #76b9e9);
+    box-shadow: 0px 0 px 10px 0px #666;
+}
+
+.contact-map{
+    width: 100%;
+    height: auto;
+    flex: 50%;
+}
+
+.contact-map iframe{
+    width: 100%;
+    height: 100%;
+}
+
+.contact-form{
+    width: 100%;
+    height: auto;
+    flex: 50%;
+    padding: 30px;
+    text-align: center;
+}
+
+.contact-form h1{
+    margin-bottom: 10px;
+}
+
+
+.contact-form-txt{
+    width: 100%;
+    height: 40px;
+    color: #000;
+    border: 1px solid #bcbcbc;
+    border-radius: 50px;
+    outline: none;
+    margin-bottom: 20px;
+    padding: 15px;
+}
+
+.contact-form-txt::placeholder{
+    color: #aaa;
+}
+
+.contact-form-txtarea{
+    width: 100%;
+    height: 130px;
+    color: #000;
+    border: 1px solid #bcbcbc;
+    border-radius: 10px;
+    outline: none;
+    margin-bottom: 20px;
+    padding: 15px;
+    font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+.contact-form-txtarea::placeholder{
+    color: #aaa;
+}
+
+/* CSS dasar untuk container footer */
+.footer-container {
+    display: flex;
+    justify-content: space-between; /* Membagi kolom secara merata */
+    align-items: flex-start; /* Menyelaraskan kolom ke atas */
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    flex-wrap: wrap; /* Agar responsif */
+}
+
+  /* Setiap kolom dalam footer */
+.footer-section {
+    flex: 1;
+    min-width: 200px; /* Lebar minimal untuk setiap kolom */
+    padding: 10px;
+    color: white;
+}
+
+  /* Untuk bagian media sosial */
+.footer-media {
+    display: flex;
+    gap: 10px; /* Jarak antar ikon media sosial */
+    align-items: center; 
+    color: white;
+}
+
+.footer-copyright {
+    text-align: center;
+    padding: 10px;
+    background-color: #222;
+    color: #bbb;
+    font-size: 0.9em;
+}
+
+
+
+@media (max-width: 1024px) {
+    header {
+        padding: 30px 10%;
+    }
+
+    .logo img {
+        width: 80%;
+    }
+
+    .navlist a {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Menu responsive */
+    #menu-icon {
+        display: block;
+    }
+
+    .navlist {
+        position: absolute;
+        width: 100%;
+        height: 100vh;
+        padding: 80px 50px;
+        top: 0;
+        right: 0;
+        left: 100%;
+        display: flex;
+        flex-direction: column;
+        background-color: var(--text-color);
+        transition: all .7s ease-in-out;
+        text-align: center;
+    }
+
+    .navlist a{
+        display: block;
+        padding: 0;
+        margin: 0px 0px 35px 0px;
+        font-size: 2.1rem;
+        font-weight: 500;
+    }
+
+    .navlist.open{
+        left: 0;
+    }
+
+
+
+    /* Mengatur tampilan header saat sticky di perangkat kecil */
+    header.sticky {
+        padding: 20px 10%;
+    }
+
+    .home {
+        background-size: cover;
+        background-position: center;
+        padding: 50px 10% 30px;
+    }
+
+    .home-text h1 {
+        font-size: 2.5rem;
+    }
+
+    .home-text h3 {
+        font-size: 20px;
+    }
+
+    .btn {
+        font-size: 16px;
+    }
+
+    .btn2 {
+        font-size: 16px;
+    }
+
+    .home-text p {
+        font-size: 14px;
+    }
+
+    .booking .row-booking {
+        flex-direction: column;
+        gap: 3rem;
+    }
+
+    .contact-form-txt,
+    .contact-form-txtarea {
+        width: 100%;
+        font-size: 14px;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-section {
+        margin-bottom: 15px;
+    }
+
+    .footer-media {
+        flex-wrap: wrap;
+    }
+
+    .footer-copyright {
+        font-size: 0.8em;
+    }
+}
+
+/* Untuk layar lebih kecil dari 480px */
+@media (max-width: 480px) {
+    header {
+        padding: 20px 5%;
+    }
+
+    .logo img {
+        width: 70%;
+    }
+
+    .navlist a {
+        font-size: 16px;
+        margin: 10px 0;
+    }
+
+    .home-text h1 {
+        font-size: 2rem;
+    }
+
+    .home-text h3 {
+        font-size: 18px;
+    }
+
+    .home-text p {
+        font-size: 12px;
+    }
+
+    .btn {
+        font-size: 14px;
+        padding: 12px 25px;
+    }
+
+    .btn2 {
+        font-size: 14px;
+        padding: 12px 25px;
+    }
+
+    .package .box-container .box .content-p h3 {
+        font-size: 1.2rem;
+    }
+
+    .package .box-container .box .content-p p {
+        font-size: 0.9rem;
+    }
+
+    .package .box-container .box .content-p .lokasi {
+        font-size: 1rem;
+    }
+
+    .contact-form-txt,
+    .contact-form-txtarea {
+        font-size: 12px;
+    }
+
+    .footer-media {
+        justify-content: center;
+    }
+}
